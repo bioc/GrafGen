@@ -72,7 +72,7 @@ int BimFileAncestrySnps::ReadAncestrySnpsFromFile(string bimFile, AncestrySnps* 
     char fpLine[1048675];
 
     FILE *ifp = fopen(bimFile.c_str(), "r");
-    if (!ifp) error("ERROR: Could not open bim file");
+    if (!ifp) Rprintf("ERROR: Could not open bim file");
 
     bool fileIsValid = true;
 

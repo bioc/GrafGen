@@ -142,7 +142,7 @@ int SampleGenoAncestry::SaveAncestryResults(string outFile, int print)
     }
     else {
       if (print) Rprintf("ERROR: Can't open %s for writing!\n", outFile.c_str());
-      error("ERROR opening output file");
+      Rprintf("ERROR opening output file");
       return 0;
     }
 

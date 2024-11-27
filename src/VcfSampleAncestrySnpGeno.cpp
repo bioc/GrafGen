@@ -112,7 +112,7 @@ bool VcfSampleAncestrySnpGeno::ReadDataFromFile(int print)
                 errorString = gzerror(file, & err);
                 if (err) {
                     if (print) Rprintf("Error: %s.\n", errorString);
-                    error("ERROR reading binary file");
+                    Rprintf("ERROR reading binary file");
                 }
             }
         }
@@ -188,7 +188,7 @@ bool VcfSampleAncestrySnpGeno::ReadDataFromFile(int print)
                         else {
                             if (print) Rprintf("ERROR: vcf file %s doesn't include samples!\n",
                                     vcfFile.c_str());
-                            error("ERROR with VCF file");
+                            Rprintf("ERROR with VCF file");
                             fileDone = true;
                             return false;
                         }
@@ -199,13 +199,13 @@ bool VcfSampleAncestrySnpGeno::ReadDataFromFile(int print)
                 }
                 else if (chrStr[0] && chrStr[0] != '#') {
                     if (!hasHeadRow) {
-                        error("ERROR: didn't find #CHROM row in vcf file");
+                        Rprintf("ERROR: didn't find #CHROM row in vcf file");
                         return false;
                     }
 
                     if (numCols != numSamples) {
                       if (print) Rprintf("ERROR at line # %d \n", lineNo);
-                      error("ERROR with VCF file");
+                      Rprintf("ERROR with VCF file");
                       return false;
                     }
 

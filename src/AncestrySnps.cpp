@@ -40,7 +40,7 @@ int AncestrySnps::ReadAncestrySnpsFromFile(string ancSnpFile, int print)
     char snpLine[5000];
 
     FILE *ifp = fopen(ancSnpFile.c_str(), "r");
-    if (!ifp) error("ERROR: Couldn't open genotype file");
+    if (!ifp) Rprintf("ERROR: Couldn't open genotype file");
 
     int lineNo = 0;
     bool fileIsValid = true;

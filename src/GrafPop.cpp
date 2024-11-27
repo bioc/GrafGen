@@ -25,7 +25,7 @@ void C_main(char **cargs, int *iargs)
         VcfSampleAncestrySnpGeno *vcfGeno = new VcfSampleAncestrySnpGeno(cargs[CARG_INFILE], ancSnps);
         bool dataRead = vcfGeno->ReadDataFromFile(print);
         if (!dataRead) {
-            error("Failed to read genotype data");
+            Rprintf("Failed to read genotype data");
         }
         if (print) vcfGeno->ShowSummary();
         vcfGeno->RecodeSnpGenotypes();
@@ -38,7 +38,7 @@ void C_main(char **cargs, int *iargs)
             smpGenoAnc->SetSnpGenoData(&vcfGeno->vcfAncSnpIds, &vcfGeno->vcfAncSnpCodedGenos);
         }
         else {
-           error("Too few genotyped ancestry SNPs");
+           Rprintf("Too few genotyped ancestry SNPs");
         }
     }
     else if (fileType == BED_FILE) {
@@ -61,13 +61,13 @@ void C_main(char **cargs, int *iargs)
         if (smpGenoAnc->HasEnoughAncestrySnps(numBimAncSnps)) {
             BedFileSnpGeno *bedGenos = new BedFileSnpGeno(bedFile, ancSnps, bimSnps, famSmps);
             bool hasErr = bedGenos->ReadGenotypesFromBedFile(print);
-            if (hasErr) error("ERROR reading genotype file");
+            if (hasErr) Rprintf("ERROR reading genotype file");
             if (print) bedGenos->ShowSummary();
 
             smpGenoAnc->SetSnpGenoData(&bedGenos->ancSnpSnpIds, &bedGenos->ancSnpSmpGenos);
         }
         else {
-            error("Too few genotyped ancestry SNPs");
+            Rprintf("Too few genotyped ancestry SNPs");
         }
     }
 
