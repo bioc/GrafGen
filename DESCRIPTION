@@ -1,7 +1,7 @@
 Package: GrafGen
 Title: Classification of Helicobacter Pylori Genomes
 Version: 1.3.0
-Date: 2024-03-25
+Date: 2024-12-16
 Authors@R: c(person(given="William", family="Wheeler", role=c("aut", "cre"),
                 email="wheelerb@imsweb.com"),
             person(given="Difei", family="Wang", role="aut",
@@ -10,7 +10,7 @@ Authors@R: c(person(given="William", family="Wheeler", role=c("aut", "cre"),
             person(given="Yumi", family="Jin", role="aut"),
             person(given="Charles", family="Rabkin", role="aut", 
                 email="rabkinc@exchange.nih.gov"))
-Imports: stats, utils, graphics, ggplot2, plotly, zlibbioc, scales,
+Imports: stats, utils, graphics, ggplot2, plotly, scales,
         RColorBrewer, dplyr, grDevices, GenomicRanges, shiny, cowplot,
         ggpubr, stringr, rlang
 Depends: R (>= 4.3.0)
